@@ -56,13 +56,11 @@ public class Lista<T> {
 
     public No<T> getNo(int index){
 
-       
-
-
+        validaIndice(index);
         No<T> noAuxiliar = refEntrada;
         No<T> noRetorno = null;
 
-        for(int i = 0; i < this.size() - 1; i++){
+        for(int i = 0; i <= index; i++){
             noRetorno = noAuxiliar;
             noAuxiliar = noAuxiliar.getProximoNo();
         }
@@ -77,6 +75,38 @@ public class Lista<T> {
             throw new IndexOutOfBoundsException("não existe conteúdo no índice "  + index + " desta lista. Essa lista só vai até o índice " + ultimoIndice);
         }
 
+    }
+
+    public T get(int index){
+        return getNo(index).getConteudo();
+    }
+
+    public T remove(int index){
+        No<T> noPivo = this.getNo(index);
+        if(index == 0){
+            refEntrada = noPivo.getProximoNo();
+            return noPivo.getConteudo();
+        }
+
+        No<T> noAnterior = getNo(index -1);
+        noAnterior.setProximoNo(noPivo.getProximoNo());
+
+        return noPivo.getConteudo();
+    }
+
+    @Override
+    public String toString() {
+        String strRetorno = "";
+        No<T> noAuxiliar = refEntrada;
+        for(int i = 0; i < this.size();i++){
+            strRetorno += "[No{conteudo = " + noAuxiliar.getConteudo() + "}]---->";
+            
+            
+            noAuxiliar = noAuxiliar.getProximoNo();
+        }
+        strRetorno += null;
+
+        return strRetorno;
     }
 }   
 
