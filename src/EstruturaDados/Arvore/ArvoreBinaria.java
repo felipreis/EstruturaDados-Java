@@ -11,7 +11,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     public void inserir(T conteudo){
         NoArvore<T> novoNo = new NoArvore<>(conteudo);
 
-        this.raiz = inserir(raiz,novoNo)
+        this.raiz = inserir(raiz,novoNo);
     }
 
     private NoArvore<T> inserir(NoArvore<T> atual, NoArvore<T> novoNo){
@@ -28,7 +28,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     //Exibição em ordem
 
     public void exibirInOrdem(){
-        System.out.println("Exibir em Ordem");
+        System.out.print("Exibir em Ordem");
         exibirInOrdem(this.raiz);
     }
     
@@ -36,7 +36,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     public void exibirInOrdem(NoArvore<T> atual){
         if(atual != null){
             exibirInOrdem(atual.getNoEsq());
-            System.out.println(atual.getConteudo() + ",");
+            System.out.print(atual.getConteudo() + ",");
             exibirInOrdem(atual.getNoDir());
         }
     }
@@ -45,7 +45,7 @@ public class ArvoreBinaria<T extends Comparable<T>> {
     //Exibição Pós Ordem
 
     public void exibirPosOrdem(){
-        System.out.println("Exibir Pós Ordem");
+        System.out.print("Exibir Pós Ordem");
         exibirPosOrdem(this.raiz);
     }
     
