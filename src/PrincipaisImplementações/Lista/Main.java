@@ -18,8 +18,10 @@ public class Main {
 
     System.out.println(listaCarro);
 
+    // TRAZENDO UM ELEMENTO LOCALIZADO NO INDICE FORNECIDO
     System.out.println(listaCarro.get(2));
 
+    //ENCONTRANDO ÍNDICE DE UM ELEMENTO
     System.out.println(listaCarro.indexOf(new Carro("Ford")));
 
     }
