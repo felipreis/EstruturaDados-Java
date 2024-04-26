@@ -1,9 +1,6 @@
-package PrincipaisImplementações;
+package PrincipaisImplementações.Stack;
 
 import java.util.Objects;
-
-// EQUALS E HASHCODE
-
 
 public class Carro {
     
@@ -34,5 +31,11 @@ public class Carro {
         return Objects.hash(marca);
     }
 
+    @Override
+    public String toString() {
+        return "Carro{" +
+                "marca: " + this.marca +
+                '}'; 
+    }
 
 }
