@@ -25,6 +25,7 @@ public class Main {
         treeSetCarro.add(new Carro("Wolks"));
         treeSetCarro.add(new Carro("bmw"));
 
+        // adiciona elementos em árvore de forma ordenada conforme método compareTo()
         System.out.println(treeSetCarro);
 
 
